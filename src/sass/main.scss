@@ -1,0 +1,157 @@
+@use 'colors' as *;
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   font-family: 'Red Hat Display', sans-serif;
+   background-image: url('../../dist/img/pattern-background-mobile.svg');
+   background-repeat: no-repeat;
+   background-color: $Pale-blue;
+   background-size: contain;
+   
+}
+.card {
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   background-color: $Very-pale-blue;
+   border-radius: 12px;
+   width: 300px;
+   overflow: hidden;
+   &__body {
+      padding: 30px;
+      h2 {
+         font-size: 2.6rem;
+         color: $Dark-blue;
+      }
+      &-text {
+         padding-top: 20px;
+         color: $Desaturated-blue;
+         font-size: 1.5rem;
+      }
+      button {
+         border: none;
+         background-color: $Bright-blue;
+         width: 100%;
+         padding: 15px;
+         border-radius: 12px;
+         color: $Pale-blue;
+         font-weight: bold;
+         font-size: 1.5rem;
+         cursor: pointer;
+         margin-top: 10px;
+         margin-bottom: 25px;
+      }
+      .cancel {
+         font-weight: bold;
+         color: $Desaturated-blue;
+         text-decoration: none;
+         font-size: 1.4rem;
+         
+      }
+   }
+
+   &__plan-box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: #FFFEFF;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 12px;
+      width: 100%;
+      font-size: 1.5rem;
+      .change {
+         margin-left: auto;
+         margin-right: 10px;
+         color: $Bright-blue;
+         font-weight: bold;
+      }
+      &_nameprice {
+         padding-left: 20px;
+         display: flex;
+         flex-direction: column;
+         color: $Dark-blue;
+         
+         .planName {
+            font-weight: bold;
+         }
+         .planPrice {
+            color: $Desaturated-blue;
+         }
+      }
+   }
+
+}
+@media (min-width: 500px) {
+   .card {
+      width: 400px;
+
+   }
+}
+@media (min-width: 600px) {
+   body {
+      background-image: url('../../dist/img/pattern-background-desktop.svg');
+   }
+   .card {
+      width: 400px;
+
+   }
+}
+@media (max-width: 499px) {
+   .card {
+      &__body {
+         h2 {
+            font-size: 2.4rem;
+         }
+         &-text {
+            font-size: 1.4rem;
+         }
+      }
+   
+      &__plan-box {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         background-color: #FFFEFF;
+         padding: 20px;
+         margin: 20px 0;
+         border-radius: 12px;
+         width: 100%;
+         font-size: 1.5rem;
+         .change {
+            margin-left: 20px;
+            font-size: 1.3rem;
+            color: $Bright-blue;
+            font-weight: bold;
+         }
+         &_nameprice {
+            padding-left: 10px;
+            display: flex;
+            flex-direction: column;
+            color: $Dark-blue;
+            
+            .planName {
+               font-size: 1.4rem;
+               font-weight: bold;
+            }
+            .planPrice {
+               color: $Desaturated-blue;
+            }
+         }
+      }
+   
+   }
+}
